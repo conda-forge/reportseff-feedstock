@@ -1,5 +1,5 @@
 {% set name = "reportseff" %}
-{% set version = "2.8.0" %}
+{% set version = "2.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/reportseff-{{ version }}.tar.gz
-  sha256: f24e4c6236156806ff45add1e37dd67a3fee22864bf954961a62da435c30259e
+  sha256: 62a0d79ac0d883c365cf509058c0a45bf6c97dc5789ed4ed09cc250ae4c72806
 
 build:
   entry_points:
