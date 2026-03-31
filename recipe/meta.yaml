@@ -1,5 +1,5 @@
 {% set name = "reportseff" %}
-{% set version = "2.10.1" %}
+{% set version = "2.10.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,24 +7,23 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/reportseff-{{ version }}.tar.gz
-  sha256: 44675448f5f35968088cfc5d648a32e257c96b63b674ff90473f2fb4a7da3dde
+  sha256: 86065f5a29aec328f2b88203be39ed8d8fc7866173108656a1d99dd85aad1858
 
 build:
   entry_points:
     - reportseff = reportseff.console:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core >=1.0.0
+    - uv-build >=0.9.25,<0.10.0
     - pip
   run:
     - python >={{ python_min }}
     - click >=6.7
-    - importlib-metadata >=4.8.2
 
 test:
   imports:
